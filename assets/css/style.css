@@ -1,0 +1,677 @@
+/* ---------------------------------
+------ END :: Header Section ----
+----------------------------------- */
+.lancer-app-header-section {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    .lancer-app-header-container {
+        border: 1px solid white;
+        transition: all .3s ease;
+        border-radius: 16px;
+        width: 95%;
+        padding-inline: 20px;
+        margin: 0 auto;
+        height: 82px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.747);
+
+        &.header-floating {
+            backdrop-filter: blur(10px);
+            width: 85%;
+            border: 1px solid rgb(207, 201, 201);
+
+            .nav-login-btn {
+                .demo-btn {
+                    transition: all 3s ease;
+
+                    span {
+                        width: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        .lancer-header-navbar {
+            display: flex;
+            position: relative;
+            width: 75%;
+            align-items: center;
+            margin-left: 10%;
+
+            .header-navbar-list {
+                display: flex;
+                position: absolute;
+                gap: 30px;
+
+                .header-navbar-item {
+                    .header-navbar-link {
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 400;
+                        cursor: pointer;
+                        color: #747474;
+                        min-width: max-content;
+                        display: block;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-login-btn {
+            margin-left: auto;
+            display: flex;
+            gap: 6px;
+
+            .nav-btn {
+                padding: 4px 12px;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: .5px;
+                min-width: max-content;
+                border-radius: 8px;
+                transition: all .3s ease;
+            }
+
+            .login-btn {
+                border: 1px solid rgb(224, 223, 223);
+                background-color: white;
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                }
+            }
+
+            .demo-btn {
+                color: white;
+                background-color: black;
+                display: flex;
+                gap: 2px;
+                border: 1px solid black;
+
+                &:hover {
+                    background: white;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .toggle-btn {
+        display: none;
+
+        i {
+            color: gray;
+        }
+
+        input {
+            display: none;
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: Header Section ----
+----------------------------------- */
+/* ###########################  */
+/* ###########################  */
+/* ###########################  */
+/* ###########################  */
+/* ###########################  */
+/* ---------------------------------
+------ START :: Hero Section -------
+----------------------------------- */
+.lancer-hero-section {
+    padding-top: 126px;
+
+    .container {
+        .lancer-hero-container {
+            display: flex;
+            flex-direction: column;
+            gap: 90px;
+
+            /* Hero Container Content Wrapper  */
+            .hero-container-content-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+
+                .content-tagline {
+                    background-color: #d9f99d;
+                    border-radius: 20px;
+                    display: flex;
+                    text-align: center;
+                    max-width: fit-content;
+                    padding: 6px 12px;
+                    align-items: center;
+                    text-align: center;
+                    gap: 8px;
+
+                    .content-title {
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 20px;
+                    }
+
+                    svg {
+                        width: 14px;
+                    }
+                }
+
+                .hero-container-head {
+                    font-size: 74px;
+                    line-height: 84px;
+                    font-weight: 600;
+                    max-width: 78%;
+                    text-align: center;
+                    margin-top: 6px;
+                }
+
+                .hero-sub-heading {
+                    font-size: 20px;
+                    line-height: 30px;
+                    font-weight: 400;
+                    color: #888888;
+                    margin-top: 10px;
+                }
+
+                .hero-cta-container {
+                    margin-top: 20px;
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    .hero-cta-group {
+                        box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+                        padding: 4px 4px;
+                        border-radius: 16px;
+
+                        input {
+                            border: none;
+                            padding: 6px 16px 6px 10px;
+                            outline: none;
+
+                            /* outline: black; */
+                            &::placeholder {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .cta-group-btn {
+                            height: 40px;
+                            border-radius: 8px;
+                            background-color: black;
+                            color: white;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 24px;
+                            border: none;
+                            border-radius: inherit;
+                            height: 40px;
+                            padding-inline: 28px;
+                            align-items: center;
+                        }
+                    }
+
+                    .demo-link {
+                        display: flex;
+                        gap: 8px;
+                        align-items: center;
+                        box-shadow: 0 1px 2px 0 #0000000d;
+                        border-radius: 10px;
+                        height: 38px;
+                        padding-inline: 10px;
+
+                        p {
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 24px;
+                            color: black;
+                        }
+                    }
+                }
+            }
+
+            /* Hero Container Image  */
+            .hero-container-image {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 19px;
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: Hero Section -------
+----------------------------------- */
+/* ########################### */
+/* ########################### */
+/* ########################### */
+/* ########################### */
+/* ########################### */
+/* ########################### */
+/* ---------------------------------
+------ START :: Testimonial Section ---
+----------------------------------- */
+.lancer-testimonial-section {
+    background-color: black;
+    color: white;
+    padding: 64px 0 128px;
+
+    .container {
+        .lancer-testimonial-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+
+            .testimonial-badge-head {
+                display: flex;
+                gap: 6px;
+                align-items: center;
+
+                svg {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .testimonial-head {
+                    font-size: 36px;
+                    font-weight: 700;
+                    line-height: 46px;
+                }
+            }
+
+            .lancer-home-page-title {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 28px;
+                color: #d1d5dc;
+            }
+
+            .testimonial-card {
+                margin-top: 10px;
+                display: flex;
+                border: .5px solid #e5e5e5;
+                border-radius: 24px;
+                gap: 50px;
+                justify-content: space-between;
+                padding: 80px 48px;
+                width: 78%;
+
+                .testimonial-card-image {
+                    img {
+                        max-width: 450px;
+                        aspect-ratio: 1 / 1.2;
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 24px;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .testimonial-card-content {
+                    margin-top: 10px;
+                    width: 50%;
+
+                    .profile-name {
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 34px;
+                    }
+
+                    .profile-title {
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 24px;
+                        color: #c8c9ca;
+                    }
+
+                    .profile-badge-stars {
+                        display: flex;
+                        gap: 2px;
+                        padding: 10px 0 24px 0;
+
+                        i {
+                            color: #f1be00;
+                        }
+                    }
+
+                    .profile-desc {
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        color: #c8c9ca;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------
+------END :: Testimonial Section ---
+----------------------------------- */
+/* #############################  */
+/* #############################  */
+/* #############################  */
+/* #############################  */
+/* #############################  */
+/* #############################  */
+/* ---------------------------------
+------ START :: Performance Section ---
+----------------------------------- */
+.performance-section {
+    padding-block: 64px;
+
+    .container {
+        .performance-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 6px;
+
+            .performance-head {
+                font-size: 36px;
+                line-height: 44px;
+                font-weight: 700;
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .lancer-home-page-title {
+                color: #737373;
+            }
+
+            .performance-stat-cards {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                width: 97%;
+                margin-top: 30px;
+
+                .stat-card {
+                    border: 1px solid #e5e5e5;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    align-items: center;
+                    padding: 32px 0;
+
+                    &:nth-child(1) {
+                        .stat-icon {
+                            svg {
+                                color: #ff6467;
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        .stat-icon {
+                            svg {
+                                color: #5ea500;
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        .stat-icon {
+                            svg {
+                                color: #00a6f4;
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        .stat-icon {
+                            svg {
+                                color: #d08700;
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        .stat-icon {
+                            svg {
+                                color: #9810fa;
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        border-top-left-radius: 12px;
+                        border-bottom-left-radius: 12px;
+                    }
+
+                    &:nth-child(5) {
+                        border-top-right-radius: 12px;
+                        border-bottom-right-radius: 12px;
+                    }
+
+                    h3 {
+                        font-size: 36px;
+                        line-height: 44px;
+                        font-weight: 700;
+                    }
+
+                    .stat-card-label {
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 500;
+                    }
+
+                    .stat-card-detail {
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-weight: 400;
+                        font-family: ui-sans-serif;
+                        color: #737373;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: Performance Section ---
+----------------------------------- */
+/* ###########################  */
+/* ###########################  */
+/* ###########################  */
+/* ###########################  */
+/* ###########################  */
+/* ###########################  */
+/* ---------------------------------
+------ START :: Conversion Section ---
+----------------------------------- */
+.lancer-conversion-section {
+    margin: 120px 0;
+
+    .container {
+        .lancer-cost-container {
+            padding: 110px 48px;
+            background-color: #19191d;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: space-evenly;
+            width: 111%;
+            margin-left: -56px;
+
+            .conversion-head {
+                font-size: 36px;
+                line-height: 40px;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .comparison-containers {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                width: 90%;
+                gap: 20px;
+                align-items: center;
+                margin: 38px auto 0;
+
+                .comparison-container {
+                    background: #18181b;
+                    border: 1px solid #ff6467;
+                    box-shadow: 1px 0 6px #ff6467;
+                    padding: 32px;
+                    border-radius: 16px;
+                    transition: all .3s ease;
+
+                    .comperison-heading-wrapper {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .comperison-header {
+                            .comparison-head {
+                                font-size: 20px;
+                                line-height: 26px;
+                                font-weight: 700;
+                            }
+
+                            .comperison-title {
+                                font-size: 14px;
+                                line-height: 16px;
+                                font-weight: 400;
+                                color: #99a1af;
+                                max-width: 300px;
+                                margin-top: 6px;
+                                margin-bottom: 18px;
+                            }
+                        }
+                    }
+
+                    .lancer-comperison-list {
+                        border-top: 1px solid #242323;
+                        border-bottom: 1px solid #242323;
+                        padding: 20px 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+
+                        .comperison-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            font-size: 16px;
+                            line-height: 24px;
+                            font-weight: 400;
+
+                            svg {
+                                width: 12px;
+                                height: 12px;
+                                color: rgb(104, 101, 101);
+                            }
+
+                            p {
+                                span {
+                                    color: #ff6467;
+                                    padding-right: 4px;
+                                }
+                            }
+                        }
+                    }
+
+                    .meeting-rate {
+                        display: flex;
+                        align-items: end;
+                        gap: 14px;
+                        padding-top: 28px;
+                        color: #99a1af;
+
+                        span {
+                            color: #ff6467;
+                            font-size: 30px;
+                            line-height: 34px;
+                            font-weight: 800;
+                        }
+                    }
+
+                    &:hover {
+                        transform: scale(1.03);
+                        box-shadow: 1px 0 14px #ff6467;
+                    }
+                }
+
+                :nth-child(3).comparison-container {
+                    border: 1px solid #05df72;
+                    box-shadow: 1px 0px 4px #05df72;
+
+                    & .lancer-comperison-list {
+                        & .comperison-item {
+                            & p {
+                                span {
+                                    color: #05df72;
+                                }
+                            }
+                        }
+                    }
+
+                    .meeting-rate {
+                        span {
+                            color: #05df72;
+                        }
+                    }
+
+                    &:hover {
+                        transform: scale(1.03);
+                        box-shadow: 1px 0 14px #05df72;
+                    }
+                }
+            }
+        }
+
+        .versus-title {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 36px;
+            border: 3px solid white;
+            border-radius: 50px;
+            padding: 14px;
+            margin: 0 10px;
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: Conversion Section ---
+----------------------------------- */

@@ -1,0 +1,642 @@
+/* @media(max-width:1070px) {
+
+} */
+@media(max-width:1220px) {
+    .performance-section {
+        .container {
+            .performance-container {
+                .performance-stat-cards {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+        }
+    }
+
+    /* ########### */
+    /* ########### */
+    /* ########### */
+    .lancer-conversion-section {
+        .container {
+            .lancer-cost-container {
+                padding: 70px 28px;
+                width: 90%;
+                margin-left: 0;
+                margin: 0 auto;
+
+                .conversion-head {}
+
+                .comparison-containers {
+                    flex-direction: column;
+
+                    .comparison-container {
+                        .comperison-heading-wrapper {
+                            .comperison-header {
+                                .comparison-head {}
+
+                                .comperison-title {}
+                            }
+
+                            .lancer-comperison-list {
+                                .comperison-item {
+                                    svg {}
+
+                                    p {
+                                        span {}
+                                    }
+                                }
+                            }
+
+                            .meeting-rate {
+                                span {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media(max-width:1070px) {
+    .lancer-app-header-section {
+        .container {
+            width: calc(100% - 10px);
+
+            .lancer-app-header-container {
+                height: 62px;
+                padding-inline: 6px;
+                width: 100%;
+
+                &.header-floating {
+                    backdrop-filter: blur(10px);
+                    width: 100%;
+                    border: none;
+                }
+
+                .lancer-header-logo-image {
+                    svg {
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+
+                &.header-floating {
+                    border: none;
+                }
+
+                .lancer-header-navbar {
+                    position: fixed;
+                    align-items: center;
+                    top: -100vh;
+                    max-width: 300px;
+                    width: 100%;
+                    height: 600px;
+                    left: 0;
+                    right: 0;
+                    background: white;
+                    flex-direction: column;
+                    margin-left: 0;
+                    gap: 30px;
+                    transition: all .3s ease;
+
+                    .header-navbar-list {
+                        padding-top: 40px;
+                        position: static;
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .nav-login-btn {
+                        margin-left: 0;
+                        flex-direction: column;
+                    }
+                }
+
+                .toggle-btn {
+                    display: block;
+                    color: black;
+                    position: absolute;
+                    top: 20px;
+                    right: 5%;
+
+                    &.nav-close-icon {
+                        display: none;
+                    }
+                }
+
+                &.lancer-app-header-container:has(input:checked) .lancer-header-navbar {
+                    top: 84px;
+                }
+
+                &.lancer-app-header-container:has(input:checked) .burger-icon {
+                    display: none;
+                }
+
+                &.lancer-app-header-container:has(input:checked) .nav-close-icon {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    /* ###################  */
+    /* ###################  */
+    /* ###################  */
+    /* ###################  */
+    .lancer-hero-section {
+        .container {
+            .lancer-hero-container {
+                .hero-container-content-wrapper {
+                    .hero-sub-heading {
+                        text-align: center;
+                        width: 90%;
+                    }
+
+                    .hero-container-head {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    /* ##################  */
+    /* ##################  */
+    /* ##################  */
+    /* ##################  */
+    /* ##################  */
+    .lancer-testimonial-section {
+        & .container {
+            & .lancer-testimonial-container {
+                .testimonial-badge-head {
+                    .testimonial-head {
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+
+                .testimonial-title {
+                    text-align: center;
+                }
+
+                & .testimonial-card {
+                    flex-direction: column;
+                    text-align: center;
+                    width: 100%;
+
+                    & .testimonial-card-image {
+                        img {
+                            aspect-ratio: 1/1;
+                        }
+                    }
+
+                    .testimonial-card-content {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ---------------------------------
+------- Media Querry 992px-----------
+---------------------------------- */
+@media(max-width:992px) {
+    .lancer-hero-section {
+        .container {
+            .lancer-hero-container {
+                .hero-container-content-wrapper {
+                    .hero-container-head {
+                        font-size: 60px;
+                        line-height: 71px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media(max-width:768px) {
+    .lancer-hero-section {
+        padding-top: 100px;
+
+        .container {
+            .lancer-hero-container {
+                gap: 50px;
+
+                .hero-container-content-wrapper {
+                    gap: 20px;
+
+                    .hero-container-head {
+                        font-size: 50px;
+                        line-height: 61px;
+                    }
+
+                    .hero-cta-container {
+                        flex-direction: column;
+                        gap: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .lancer-testimonial-section {
+        padding: 64px 0;
+
+        & .container {
+            & .lancer-testimonial-container {
+                gap: 14px;
+
+                .testimonial-badge-head {
+                    text-align: center;
+
+                    .testimonial-head {
+                        font-size: 30px;
+                        line-height: 38px;
+                    }
+                }
+            }
+        }
+    }
+
+    .performance-section {
+        .container {
+            .performance-container {
+                .performance-head {
+                    font-size: 28px;
+                    line-height: 34px;
+                }
+
+                .performance-stat-cards {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+    }
+
+    .lancer-conversion-section {
+        margin: 60px 0;
+
+        .container {
+            .lancer-cost-container {
+                padding: 50px 10px;
+
+                .conversion-head {
+                    font-size: 28px;
+                    line-height: 34px;
+                }
+
+                .comparison-containers {
+                    margin-top: 30px;
+
+                    .comparison-container {
+                        padding: 18px;
+
+                        .comperison-heading-wrapper {
+
+                            /* display: grid;
+                            gap: 40px;
+                            grid-template-columns: repeat(2, 1fr); */
+                            .comperison-header {
+                                .comparison-head {
+                                    /* font-size: 14px;
+                                    line-height: 18px; */
+                                    padding-top: 10px;
+                                }
+
+                                .comperison-title {
+                                    /* grid-column: 1/3; */
+                                    padding-top: 10px;
+                                    max-width: 114%;
+                                }
+                            }
+
+                            .com-header-logo {
+                                /* margin-left: auto; */
+                            }
+
+                            .lancer-comperison-list {
+                                .comperison-item {
+                                    svg {}
+
+                                    p {
+                                        span {}
+                                    }
+                                }
+                            }
+
+                            .meeting-rate {
+                                span {}
+                            }
+                        }
+                    }
+                }
+
+                .versus-title {}
+            }
+        }
+    }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media(max-width:620px) {
+    .lancer-testimonial-section {
+        & .container {
+            & .lancer-testimonial-container {
+                .testimonial-badge-head {
+                    text-align: center;
+                }
+
+                & .testimonial-card {
+                    padding: 58px 34px;
+                }
+            }
+        }
+    }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media(max-width:576px) {
+    .lancer-hero-section {
+        .container {
+            .lancer-hero-container {
+                .hero-container-content-wrapper {
+                    .hero-container-head {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+
+                    .hero-sub-heading {
+                        margin-top: 0;
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+
+                    .hero-cta-container {
+                        width: 100%;
+                        margin: 0 auto;
+
+                        .hero-cta-group {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 14px;
+                            width: 100%;
+
+                            input {
+                                padding: 14px 16px;
+
+                                &::placeholder {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .lancer-testimonial-section {
+        & .container {
+            width: calc(100% - 30px);
+
+            & .lancer-testimonial-container {
+                .testimonial-badge-head {
+                    .testimonial-head {}
+                }
+
+                .testimonial-title {}
+
+                & .testimonial-card {
+                    padding: 22px;
+
+                    .testimonial-card-image {
+                        img {
+                            aspect-ratio: 1/1.4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .performance-section {
+        .container {
+            .performance-container {
+                .performance-head {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+
+                .lancer-home-page-title {
+                    font-size: 16px;
+                    line-height: 21px;
+                }
+
+                .performance-stat-cards {
+                    .stat-card {
+                        h3 {}
+
+                        .stat-card-label {}
+
+                        .stat-card-detail {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media(max-width:420px) {
+    .lancer-hero-section {
+        .container {
+            .lancer-hero-container {
+                .hero-container-content-wrapper {
+                    gap: 16px;
+
+                    .hero-container-head {
+                        font-size: 34px;
+                        line-height: 41px;
+                    }
+
+                    .hero-sub-heading {
+                        font-size: 14px;
+                        line-height: 22px;
+                    }
+
+                    .hero-cta-container {
+                        .hero-cta-group {
+                            input {
+                                padding: 14px 16px;
+
+                                &::placeholder {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+
+                    .content-tagline {
+                        padding: 0px 8px;
+
+                        .content-title {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ###############################  */
+    /* ###############################  */
+    .lancer-testimonial-section {
+        & .container {
+            & .lancer-testimonial-container {
+                .testimonial-badge-head {
+                    text-align: center;
+                }
+
+                & .testimonial-card {
+                    gap: 20px;
+                    padding: 32px 26px;
+
+                    .testimonial-card-image {
+                        img {
+                            aspect-ratio: 1/1.4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ###############################  */
+    /* ###############################  */
+    .performance-section {
+        .container {
+            .performance-container {
+                .performance-head {
+                    font-size: 20px;
+                    max-width: 80%;
+                }
+
+                .lancer-home-page-title {
+                    font-size: 12px;
+                }
+
+                .performance-stat-cards {
+                    grid-template-columns: repeat(1, 1fr);
+
+                    .stat-card {
+
+                        /* * {
+                            border-radius: 0;
+                        } */
+                        &:nth-child(1) {
+                            border-top-left-radius: 0px;
+                            border-bottom-left-radius: 0px;
+                        }
+
+                        &:nth-child(5) {
+                            border-top-right-radius: 0px;
+                            border-bottom-right-radius: 0px;
+                        }
+
+                        .stat-card-detail {}
+                    }
+                }
+            }
+        }
+    }
+
+    .lancer-conversion-section {
+        margin: 30px 0;
+
+        .container {
+            .lancer-cost-container {
+                .conversion-head {
+                    font-size: 22px;
+                    line-height: 29px;
+                }
+
+                .lancer-home-page-title {
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+
+                .comparison-containers {
+                    margin-top: 20px;
+
+                    .comparison-container {
+                        padding: 10px;
+
+                        .comperison-heading-wrapper {
+                            .comperison-header {
+                                .comparison-head {}
+
+                                .comperison-title {}
+                            }
+                        }
+
+                        .lancer-comperison-list {
+                            gap: 10px;
+
+                            .comperison-item {
+                                font-size: 14px;
+                                line-height: 18px;
+
+                                svg {}
+
+                                p {
+                                    span {}
+                                }
+                            }
+                        }
+
+                        .meeting-rate {
+                            padding-top: 18px;
+
+                            span {
+                                font-size: 24px;
+                                line-height: 28px;
+                            }
+                        }
+                    }
+                }
+
+                .versus-title {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}
