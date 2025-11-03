@@ -6,18 +6,19 @@
     font-family: system-ui;
     list-style: none;
     text-decoration: none;
+    cursor: default;
 }
 
 /* Center container with max width and side spacing */
 .container {
-    max-width: 1152px;
+    max-width: 1270px;
     width: calc(100% - 100px);
     margin: 0 auto;
 }
 
 @media(max-width:620px) {
     .container {
-        width: calc(100% - 10px);
+        width: calc(100% - 20px);
     }
 }
 
@@ -38,9 +39,10 @@ a {
     align-items: center;
     text-align: center;
     gap: 8px;
+    transition: all .3s ease;
 
     .content-title {
-        font-size: 10px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 20px;
     }
@@ -48,11 +50,38 @@ a {
     svg {
         width: 14px;
     }
+
+    &:hover {
+        background: black;
+        color: #d9f99d;
+    }
 }
 
 @media(max-width:768px) {
     .lancer-home-page-tagline {
         font-size: 10px;
+    }
+
+    .lancer-home-page-tagline {
+        background-color: #d9f99d;
+        border-radius: 20px;
+        display: flex;
+        text-align: center;
+        max-width: fit-content;
+        padding: 6px 12px;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+
+        .content-title {
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 20px;
+        }
+
+        svg {
+            width: 14px;
+        }
     }
 }
 
@@ -62,4 +91,76 @@ a {
     line-height: 28px;
     color: #d1d5dc;
     text-align: center;
+}
+
+.access-link {
+    padding: 10px;
+    border-radius: 14px;
+    position: relative;
+    /* Animation ke liye zaruri */
+    font-size: 16px;
+    color: #fff;
+    line-height: 24px;
+    font-weight: 500;
+    background-color: black;
+    display: block;
+    max-width: max-content;
+    transition: all .3s ease;
+    border: 1px solid black;
+    /* Default button background */
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    /* Overflow hidden taake animation button ke andar rahe */
+    z-index: 1;
+}
+
+.access-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #9d9e9d;
+    z-index: -1;
+    transition: width 0.4s ease-in-out;
+}
+
+.access-link:hover {
+    color: #fff;
+}
+
+.access-link:hover::before {
+    width: 100%;
+}
+
+@media(max-width:576px) {
+    .access-link {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 8px 8px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        -width: 100%;
+    }
+}
+
+@media(max-width:420px) {
+    .access-link {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 8px 8px;
+        border-radius: 8px;
+    }
+
+    .lancer-home-page-tagline {
+        .content-title {
+            font-size: 10px;
+            line-height: 16px;
+        }
+    }
 }

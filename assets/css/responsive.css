@@ -23,33 +23,20 @@
                 margin-left: 0;
                 margin: 0 auto;
 
-                .conversion-head {}
-
                 .comparison-containers {
                     flex-direction: column;
+                    gap: 50px;
+                }
+            }
+        }
+    }
 
-                    .comparison-container {
-                        .comperison-heading-wrapper {
-                            .comperison-header {
-                                .comparison-head {}
-
-                                .comperison-title {}
-                            }
-
-                            .lancer-comperison-list {
-                                .comperison-item {
-                                    svg {}
-
-                                    p {
-                                        span {}
-                                    }
-                                }
-                            }
-
-                            .meeting-rate {
-                                span {}
-                            }
-                        }
+    .promo-section {
+        & .container {
+            & .promo-container {
+                & .promo-header {
+                    .promo-section-heading {
+                        text-align: center;
                     }
                 }
             }
@@ -64,17 +51,29 @@
 @media(max-width:1070px) {
     .lancer-app-header-section {
         .container {
-            width: calc(100% - 10px);
+            width: calc(100% - 0px);
 
             .lancer-app-header-container {
                 height: 62px;
-                padding-inline: 6px;
+                padding-inline: 5%;
+                border: none;
+                transition: all .3s ease;
+                border-radius: 0;
                 width: 100%;
 
                 &.header-floating {
-                    backdrop-filter: blur(10px);
                     width: 100%;
                     border: none;
+
+                    .nav-login-btn {
+                        .demo-btn {
+                            transition: all .3s ease;
+
+                            span {
+                                width: 100%;
+                            }
+                        }
+                    }
                 }
 
                 .lancer-header-logo-image {
@@ -84,24 +83,22 @@
                     }
                 }
 
-                &.header-floating {
-                    border: none;
-                }
-
                 .lancer-header-navbar {
                     position: fixed;
                     align-items: center;
-                    top: -100vh;
+                    top: 57px;
                     max-width: 300px;
                     width: 100%;
                     height: 600px;
                     left: 0;
                     right: 0;
-                    background: white;
                     flex-direction: column;
                     margin-left: 0;
                     gap: 30px;
+                    transform: translateY(-900px);
                     transition: all .3s ease;
+                    background-color: #ffffffbe;
+                    box-shadow: 1px 3px 10px 1px rgba(128, 128, 128, 0.596);
 
                     .header-navbar-list {
                         padding-top: 40px;
@@ -126,10 +123,18 @@
                     &.nav-close-icon {
                         display: none;
                     }
+
+                    i {
+                        transition: all .3s ease;
+
+                        &:hover {
+                            color: black;
+                        }
+                    }
                 }
 
                 &.lancer-app-header-container:has(input:checked) .lancer-header-navbar {
-                    top: 84px;
+                    transform: translateX(0);
                 }
 
                 &.lancer-app-header-container:has(input:checked) .burger-icon {
@@ -157,7 +162,7 @@
                     }
 
                     .hero-container-head {
-                        max-width: 100%;
+                        max-width: 80%;
                     }
                 }
             }
@@ -185,8 +190,8 @@
 
                 & .testimonial-card {
                     flex-direction: column;
-                    text-align: center;
                     width: 100%;
+                    align-items: center;
 
                     & .testimonial-card-image {
                         img {
@@ -198,7 +203,26 @@
                         width: 100%;
                         display: flex;
                         flex-direction: column;
-                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+
+    /* ##################  */
+    /* ##################  */
+    /* ##################  */
+    /* ##################  */
+    .lancer-features-section {
+        .container {
+            .lancer-features-container {
+                .features-containers {
+                    .features-container {
+                        flex-direction: column;
+
+                        .features-content-wrapper {
+                            max-width: 100%;
+                        }
                     }
                 }
             }
@@ -222,6 +246,24 @@
                         font-size: 60px;
                         line-height: 71px;
                     }
+                }
+            }
+        }
+    }
+
+    .achievement-section {
+        padding: 100px 0;
+
+        .container {
+            .achievement-container {
+                h2 {
+                    font-size: 140px;
+                    line-height: 150px;
+                }
+
+                .achievement-desc {
+                    font-size: 26px;
+                    line-height: 34px;
                 }
             }
         }
@@ -268,8 +310,8 @@
                     text-align: center;
 
                     .testimonial-head {
-                        font-size: 30px;
-                        line-height: 38px;
+                        font-size: 22px;
+                        line-height: 28px;
                     }
                 }
             }
@@ -296,7 +338,7 @@
 
         .container {
             .lancer-cost-container {
-                padding: 50px 10px;
+                padding: 80px 10px;
 
                 .conversion-head {
                     font-size: 28px;
@@ -310,46 +352,74 @@
                         padding: 18px;
 
                         .comperison-heading-wrapper {
-
-                            /* display: grid;
-                            gap: 40px;
-                            grid-template-columns: repeat(2, 1fr); */
                             .comperison-header {
-                                .comparison-head {
-                                    /* font-size: 14px;
-                                    line-height: 18px; */
-                                    padding-top: 10px;
-                                }
-
                                 .comperison-title {
-                                    /* grid-column: 1/3; */
                                     padding-top: 10px;
                                     max-width: 114%;
                                 }
                             }
-
-                            .com-header-logo {
-                                /* margin-left: auto; */
-                            }
-
-                            .lancer-comperison-list {
-                                .comperison-item {
-                                    svg {}
-
-                                    p {
-                                        span {}
-                                    }
-                                }
-                            }
-
-                            .meeting-rate {
-                                span {}
-                            }
                         }
                     }
                 }
+            }
+        }
+    }
 
-                .versus-title {}
+    .promo-section {
+        .container {
+            .promo-container {
+                .promo-header {
+                    .promo-section-heading {
+                        font-size: 42px;
+                        line-height: 50px;
+                        text-align: center;
+                    }
+
+                    .promo-section-desc {
+                        font-size: 15px;
+                        max-width: 100%;
+                        line-height: 26px;
+                    }
+                }
+
+                .promo-card-container {
+                    flex-direction: column;
+
+                    .card-lancer-offer-container {
+                        max-width: 100%;
+                    }
+
+                    /* Card Features Container  */
+                    .card-features-container {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .lancer-faq-section {
+        .container {
+            .lancer-faq-container {
+                .faq-section-heading {}
+
+                .faq-desc {}
+
+                .faq-main-container {
+                    .faq-container-list {
+                        .faq-question {
+                            gap: 16px;
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+
+                        .faq-answer-wrapper {}
+
+                        .faq-answer-content {}
+
+                        .faq-question .icon {}
+                    }
+                }
             }
         }
     }
@@ -369,6 +439,25 @@
 
                 & .testimonial-card {
                     padding: 58px 34px;
+                }
+            }
+        }
+    }
+
+    .achievement-section {
+        padding: 30px 0;
+
+        .container {
+            .achievement-container {
+                h2 {
+                    font-size: 110px;
+                    line-height: 120px;
+                }
+
+                .achievement-desc {
+                    font-size: 24px;
+                    line-height: 30px;
+                    text-align: center;
                 }
             }
         }
@@ -424,13 +513,7 @@
             width: calc(100% - 30px);
 
             & .lancer-testimonial-container {
-                .testimonial-badge-head {
-                    .testimonial-head {}
-                }
-
-                .testimonial-title {}
-
-                & .testimonial-card {
+                .testimonial-titl & .testimonial-card {
                     padding: 22px;
 
                     .testimonial-card-image {
@@ -455,14 +538,46 @@
                     font-size: 16px;
                     line-height: 21px;
                 }
+            }
+        }
+    }
 
-                .performance-stat-cards {
-                    .stat-card {
-                        h3 {}
+    .lancer-features-section {
+        .container {
+            .lancer-features-container {
+                .features-head {
+                    padding-top: 10px;
+                    font-size: 26px;
+                    line-height: 32px;
+                }
 
-                        .stat-card-label {}
+                .features-containers {
+                    padding-top: 30px;
 
-                        .stat-card-detail {}
+                    .features-container {
+                        padding: 26px 22px;
+
+                        .features-content-wrapper {
+                            gap: 20px;
+                            max-width: 100%;
+
+                            .feature-heading {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .promo-section {
+        & .container {
+            & .promo-container {
+                & .promo-header {
+                    .promo-section-heading {
+                        font-size: 36px;
+                        line-height: 42px;
                     }
                 }
             }
@@ -520,17 +635,34 @@
     .lancer-testimonial-section {
         & .container {
             & .lancer-testimonial-container {
+                gap: 6px;
+
                 .testimonial-badge-head {
+                    .testimonial-head {
+                        font-size: 18px;
+
+                        svg {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+
                     text-align: center;
                 }
 
+                .lancer-home-page-title {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+
                 & .testimonial-card {
-                    gap: 20px;
+                    gap: 10px;
                     padding: 32px 26px;
 
-                    .testimonial-card-image {
-                        img {
-                            aspect-ratio: 1/1.4;
+                    .testimonial-card-content {
+                        .profile-desc {
+                            font-size: 16px;
+                            line-height: 23px;
                         }
                     }
                 }
@@ -549,29 +681,12 @@
                 }
 
                 .lancer-home-page-title {
-                    font-size: 12px;
+                    font-size: 16px;
+                    line-height: 23px;
                 }
 
                 .performance-stat-cards {
                     grid-template-columns: repeat(1, 1fr);
-
-                    .stat-card {
-
-                        /* * {
-                            border-radius: 0;
-                        } */
-                        &:nth-child(1) {
-                            border-top-left-radius: 0px;
-                            border-bottom-left-radius: 0px;
-                        }
-
-                        &:nth-child(5) {
-                            border-top-right-radius: 0px;
-                            border-bottom-right-radius: 0px;
-                        }
-
-                        .stat-card-detail {}
-                    }
                 }
             }
         }
@@ -598,26 +713,13 @@
                     .comparison-container {
                         padding: 10px;
 
-                        .comperison-heading-wrapper {
-                            .comperison-header {
-                                .comparison-head {}
-
-                                .comperison-title {}
-                            }
-                        }
-
                         .lancer-comperison-list {
                             gap: 10px;
 
                             .comperison-item {
-                                font-size: 14px;
+                                font-size: 13px;
                                 line-height: 18px;
-
-                                svg {}
-
-                                p {
-                                    span {}
-                                }
+                                gap: 6px;
                             }
                         }
 
@@ -639,4 +741,51 @@
             }
         }
     }
+
+    .lancer-features-section {
+        .container {
+            .lancer-features-container {
+                .features-head {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+
+    .promo-section {
+        & .container {
+            & .promo-container {
+                & .promo-header {
+                    .promo-section-heading {
+                        font-size: 30px;
+                        line-height: 33px;
+                    }
+                }
+            }
+        }
+    }
+
+    .lancer-faq-section {
+        .container {
+            .lancer-faq-container {
+                .faq-section-heading {
+                    font-size: 24px;
+                }
+
+                .faq-main-container {
+                    .faq-container-list {
+                        .faq-question {
+                            padding: 10px 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
+/* ########################   */
+/* ########################   */
+/* ########################   */
+/* ########################   */

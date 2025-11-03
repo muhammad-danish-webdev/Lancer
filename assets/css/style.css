@@ -19,16 +19,20 @@
         align-items: center;
         display: flex;
         justify-content: space-between;
-        background-color: rgba(255, 255, 255, 0.747);
+        background-color: #ffffffbe;
+        backdrop-filter: blur(10px);
+
+        .lancer-header-logo-image {
+            cursor: pointer;
+        }
 
         &.header-floating {
-            backdrop-filter: blur(10px);
             width: 85%;
-            border: 1px solid rgb(207, 201, 201);
+            border: 1px solid #cfc9c9;
 
             .nav-login-btn {
                 .demo-btn {
-                    transition: all 3s ease;
+                    transition: all .3s ease;
 
                     span {
                         width: 0;
@@ -175,10 +179,10 @@
                 }
 
                 .hero-container-head {
-                    font-size: 74px;
-                    line-height: 84px;
+                    font-size: 60px;
+                    line-height: 70px;
                     font-weight: 600;
-                    max-width: 78%;
+                    max-width: 70%;
                     text-align: center;
                     margin-top: 6px;
                 }
@@ -188,7 +192,12 @@
                     line-height: 30px;
                     font-weight: 400;
                     color: #888888;
+                    transition: all .3s ease;
                     margin-top: 10px;
+
+                    &:hover {
+                        color: black;
+                    }
                 }
 
                 .hero-cta-container {
@@ -198,18 +207,26 @@
                     gap: 16px;
 
                     .hero-cta-group {
-                        box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+                        box-shadow: 0 6px 12px -6px gray;
                         padding: 4px 4px;
                         border-radius: 16px;
+                        display: flex;
 
                         input {
                             border: none;
                             padding: 6px 16px 6px 10px;
                             outline: none;
 
-                            /* outline: black; */
                             &::placeholder {
                                 font-size: 16px;
+                                color: rgb(119, 118, 118);
+                                transition: all .3s ease;
+                            }
+
+                            &:hover {
+                                &::placeholder {
+                                    color: rgb(82, 80, 80);
+                                }
                             }
                         }
 
@@ -226,6 +243,12 @@
                             height: 40px;
                             padding-inline: 28px;
                             align-items: center;
+                            border: 1px solid rgb(182, 178, 178);
+                            transition: all .3s ease;
+
+                            &:hover {
+                                background-image: linear-gradient(to top, rgb(43, 37, 37), rgb(197, 192, 192));
+                            }
                         }
                     }
 
@@ -233,16 +256,28 @@
                         display: flex;
                         gap: 8px;
                         align-items: center;
-                        box-shadow: 0 1px 2px 0 #0000000d;
                         border-radius: 10px;
                         height: 38px;
+                        transition: all .3s ease;
                         padding-inline: 10px;
+                        border: 1px solid rgb(235, 233, 233);
 
                         p {
+                            will-change: transform;
+                            cursor: pointer;
                             font-size: 16px;
                             font-weight: 500;
                             line-height: 24px;
                             color: black;
+                        }
+
+                        svg {
+                            will-change: transform;
+                        }
+
+                        &:hover {
+                            transform: scale(1.03);
+                            box-shadow: 1px 2px 3px #80808071;
                         }
                     }
                 }
@@ -251,9 +286,10 @@
             /* Hero Container Image  */
             .hero-container-image {
                 img {
+                    cursor: pointer;
                     width: 100%;
                     height: 100%;
-                    border-radius: 19px;
+                    border-radius: 26px;
                     display: flex;
                 }
             }
@@ -274,6 +310,7 @@
 ------ START :: Testimonial Section ---
 ----------------------------------- */
 .lancer-testimonial-section {
+    margin-top: 80px;
     background-color: black;
     color: white;
     padding: 64px 0 128px;
@@ -290,6 +327,8 @@
                 display: flex;
                 gap: 6px;
                 align-items: center;
+                transition: all .3s ease;
+                will-change: transform;
 
                 svg {
                     width: 40px;
@@ -301,34 +340,44 @@
                     font-weight: 700;
                     line-height: 46px;
                 }
+
+                &:hover {
+                    transform: scale(1.02);
+                }
             }
 
             .lancer-home-page-title {
-                font-size: 18px;
-                font-weight: 400;
-                line-height: 28px;
-                color: #d1d5dc;
+                margin-bottom: 6px;
+                transition: all .3s ease;
+                will-change: transform;
+
+                &:hover {
+                    transform: scale(1.02);
+                    color: #fff;
+                }
             }
 
             .testimonial-card {
                 margin-top: 10px;
                 display: flex;
-                border: .5px solid #e5e5e5;
+                border: 1px solid #e5e5e54b;
                 border-radius: 24px;
                 gap: 50px;
                 justify-content: space-between;
                 padding: 80px 48px;
                 width: 78%;
+                transition: all .6s ease;
+                will-change: transform;
 
                 .testimonial-card-image {
                     img {
-                        max-width: 450px;
+                        max-width: 360px;
                         aspect-ratio: 1 / 1.2;
                         object-fit: cover;
                         object-position: center;
                         border-radius: 24px;
                         width: 100%;
-                        height: 100%;
+                        cursor: pointer;
                     }
                 }
 
@@ -366,6 +415,11 @@
                         color: #c8c9ca;
                     }
                 }
+
+                &:hover {
+                    transform: translateY(-5px);
+                    border: 1px solid #e5e5e5fd;
+                }
             }
         }
     }
@@ -400,16 +454,30 @@
                 font-weight: 700;
                 margin-top: 10px;
                 text-align: center;
+                transition: all .3s ease;
+                will-change: transform;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
             }
 
             .lancer-home-page-title {
                 color: #737373;
+                transition: all .3s ease;
+                will-change: transform;
+
+                &:hover {
+                    transform: scale(1.02);
+                    color: black;
+                }
             }
 
             .performance-stat-cards {
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
                 width: 97%;
+                gap: 10px;
                 margin-top: 30px;
 
                 .stat-card {
@@ -419,77 +487,20 @@
                     gap: 8px;
                     align-items: center;
                     padding: 32px 0;
-
-                    &:nth-child(1) {
-                        .stat-icon {
-                            svg {
-                                color: #ff6467;
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-                    }
-
-                    &:nth-child(2) {
-                        .stat-icon {
-                            svg {
-                                color: #5ea500;
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-                    }
-
-                    &:nth-child(3) {
-                        .stat-icon {
-                            svg {
-                                color: #00a6f4;
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-                    }
-
-                    &:nth-child(4) {
-                        .stat-icon {
-                            svg {
-                                color: #d08700;
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-                    }
-
-                    &:nth-child(5) {
-                        .stat-icon {
-                            svg {
-                                color: #9810fa;
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-                    }
-
-                    &:nth-child(1) {
-                        border-top-left-radius: 12px;
-                        border-bottom-left-radius: 12px;
-                    }
-
-                    &:nth-child(5) {
-                        border-top-right-radius: 12px;
-                        border-bottom-right-radius: 12px;
-                    }
+                    transition: all .3s ease;
 
                     h3 {
                         font-size: 36px;
                         line-height: 44px;
                         font-weight: 700;
+                        will-change: transform;
                     }
 
                     .stat-card-label {
                         font-size: 16px;
                         line-height: 24px;
                         font-weight: 500;
+                        will-change: transform;
                     }
 
                     .stat-card-detail {
@@ -498,6 +509,14 @@
                         font-weight: 400;
                         font-family: ui-sans-serif;
                         color: #737373;
+                        will-change: transform;
+                    }
+
+                    &:hover {
+                        transform: scale(1.03);
+                        border-color: #aca9a975;
+                        background: #e0dcdc6b;
+                        box-shadow: 0px 1px 13px 1px #b1adad54;
                     }
                 }
             }
@@ -530,20 +549,25 @@
             flex-direction: column;
             gap: 10px;
             justify-content: space-evenly;
-            width: 111%;
-            margin-left: -56px;
 
             .conversion-head {
                 font-size: 36px;
                 line-height: 40px;
                 font-weight: 700;
                 text-align: center;
+                transition: all .3s ease;
+                max-width: 90%;
+                text-align: center;
+                margin: 0 auto;
+
+                &:hover {
+                    transform: scale(1.01);
+                }
             }
 
             .comparison-containers {
-                margin-top: 10px;
                 display: flex;
-                justify-content: center;
+                justify-content: space-evenly;
                 width: 90%;
                 gap: 20px;
                 align-items: center;
@@ -552,7 +576,7 @@
                 .comparison-container {
                     background: #18181b;
                     border: 1px solid #ff6467;
-                    box-shadow: 1px 0 6px #ff6467;
+                    box-shadow: 1px 0 8px 1px #ff646759;
                     padding: 32px;
                     border-radius: 16px;
                     transition: all .3s ease;
@@ -598,7 +622,7 @@
 
                             svg {
                                 width: 12px;
-                                height: 12px;
+                                aspect-ratio: 1;
                                 color: rgb(104, 101, 101);
                             }
 
@@ -617,6 +641,9 @@
                         gap: 14px;
                         padding-top: 28px;
                         color: #99a1af;
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-weight: 500;
 
                         span {
                             color: #ff6467;
@@ -628,13 +655,13 @@
 
                     &:hover {
                         transform: scale(1.03);
-                        box-shadow: 1px 0 14px #ff6467;
+                        box-shadow: 1px 0 14px #ff646770;
                     }
                 }
 
                 :nth-child(3).comparison-container {
-                    border: 1px solid #05df72;
-                    box-shadow: 1px 0px 4px #05df72;
+                    border: .5px solid #05df72;
+                    box-shadow: 1px 0 8px 1px #05df724d;
 
                     & .lancer-comperison-list {
                         & .comperison-item {
@@ -654,7 +681,7 @@
 
                     &:hover {
                         transform: scale(1.03);
-                        box-shadow: 1px 0 14px #05df72;
+                        box-shadow: 1px 0 14px #05df7280;
                     }
                 }
             }
@@ -674,4 +701,753 @@
 
 /* ---------------------------------
 ------ END :: Conversion Section ---
+----------------------------------- */
+/* #########################  */
+/* #########################  */
+/* #########################  */
+/* #########################  */
+/* #########################  */
+/* ---------------------------------
+----- START :: Features Section ---
+----------------------------------- */
+.lancer-features-section {
+    padding: 64px 0;
+
+    .container {
+        .lancer-features-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 19px;
+
+            .features-title {
+                padding: 8px 16px;
+                display: flex;
+                gap: 6px;
+                border: 1px solid #adacac6b;
+                border-radius: 122px;
+                align-items: center;
+                transition: all .3s ease;
+
+                svg {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    border-radius: 16px;
+                    cursor: default;
+                }
+
+                &:hover {
+                    background: black;
+                    color: white;
+                }
+            }
+
+            .features-head {
+                max-width: 73%;
+                text-align: center;
+                padding-top: 20px;
+                font-size: 36px;
+                line-height: 45px;
+                font-weight: 700;
+                transition: all .3s ease;
+                will-change: transform;
+
+                &:hover {
+                    transform: scale(1.01);
+                }
+            }
+
+            .features-containers {
+                padding-top: 112px;
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+
+                .features-container {
+                    padding: 40px 10px 40px 40px;
+                    display: flex;
+                    border: 1px solid #ddd7d8;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    gap: 40px;
+                    transition: all .3s ease;
+
+                    .features-content-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                        max-width: 60%;
+
+                        .feature-heading {
+                            font-size: 30px;
+                            line-height: 38px;
+                            font-weight: 600;
+                            will-change: transform;
+
+                            span {
+                                padding: 4px;
+                                background-image: linear-gradient(to right, #a4f4cf, #b9f8cf);
+                                border-radius: 12px;
+                                will-change: transform;
+                            }
+                        }
+
+                        .feature-desc {
+                            font-size: 18px;
+                            line-height: 29px;
+                            font-weight: 400;
+                            color: #8E8E8E;
+                            will-change: transform;
+                        }
+                    }
+
+                    .feature-container-image {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                            display: flex;
+                        }
+                    }
+
+                    &:hover {
+                        transform: scale(1.02);
+                        box-shadow: 1px 2px 18px 1px rgba(128, 128, 128, 0.438);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: Features Section ---
+----------------------------------- */
+/* ##############################  */
+/* ##############################  */
+/* ##############################  */
+/* ##############################  */
+/* ##############################  */
+/* ---------------------------------
+------START :: Achievemement Section ---
+----------------------------------- */
+.achievement-section {
+    padding: 100px 0 100px;
+
+    .container {
+        .achievement-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-size: 192px;
+                font-weight: 700;
+                line-height: 200px;
+                color: #757272;
+                transition: all .3s ease;
+                will-change: transform;
+
+                &:hover {
+                    transform: scale(1.02);
+                    color: black;
+                }
+            }
+
+            .achievement-desc {
+                font-size: 24px;
+                line-height: 38px;
+                font-weight: 400;
+                color: #737373;
+                transition: all .3s ease;
+                will-change: transform;
+
+                &:hover {
+                    color: black;
+                    transform: scale(1.01);
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: Achievement Section ---
+----------------------------------- */
+/* #####################  */
+/* #####################  */
+/* #####################  */
+/* #####################  */
+/* ---------------------------------
+------ START :: Promo Section ---
+----------------------------------- */
+.promo-section {
+    padding: 100px 0;
+
+    .container {
+        .promo-container {
+            .promo-header {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 10px;
+
+                .pricing-tag {
+                    display: flex;
+                    gap: 6px;
+                    align-items: center;
+                    padding: 4px 12px;
+                    border: 1px solid #d3cccc;
+                    border-radius: 16px;
+                    transition: all .3s ease;
+
+                    svg {
+                        width: 12px;
+                        transition: all .3s ease;
+                        height: 12px;
+                    }
+
+                    span {
+                        transition: all .1s ease;
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 16px;
+                        color: black;
+                    }
+
+                    &:hover {
+                        background: linear-gradient(to top, black, white);
+
+                        svg {
+                            color: white;
+                        }
+
+                        span {
+                            color: white;
+                        }
+                    }
+                }
+
+                .promo-section-heading {
+                    font-size: 48px;
+                    font-weight: 700;
+                    line-height: 58px;
+                    transition: all .3s ease;
+                }
+
+                .promo-section-desc {
+                    font-size: 20px;
+                    max-width: 55%;
+                    line-height: 32px;
+                    font-weight: 400;
+                    text-align: center;
+                    color: rgb(129, 127, 127);
+
+                    span {
+                        padding: 1px 3px 2px 3px;
+                        background-image: linear-gradient(to right, #a4f4cf, #b9f8cf);
+                        border-radius: 12px;
+                    }
+                }
+            }
+
+            .promo-card-container {
+                margin: 100px auto 0;
+                max-width: max-content;
+                border: 1px solid #c9c6c686;
+                border-radius: 12px;
+                display: flex;
+                transition: all .3s ease;
+
+                .card-lancer-offer-container {
+                    max-width: 311px;
+                    width: 100%;
+                    padding: 32px;
+                    border-right: 1px solid #cecbcb52;
+
+                    .promo-offer-card {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .offer-btn {
+                            gap: 4px;
+                            border: 1px solid #b9b6b69f;
+                            display: flex;
+                            align-items: center;
+                            padding: 4px 12px;
+                            color: #171717;
+                            background: #e6e2e259;
+                            border-radius: 8px;
+                            max-width: max-content;
+                            will-change: transform;
+
+                            svg {
+                                width: 12px;
+                                height: 12px;
+                            }
+
+                            span {
+                                font-size: 12px;
+                                line-height: 16px;
+                                will-change: transform;
+                                font-weight: 500;
+                            }
+                        }
+
+                        h4 {
+                            font-size: 24px;
+                            line-height: 32px;
+                            will-change: transform;
+                            font-weight: 700;
+                        }
+
+                        .offer-card-desc {
+                            font-size: 16px;
+                            line-height: 20px;
+                            font-weight: 400;
+                            will-change: transform;
+                            color: #7e7373;
+                        }
+
+                        .client-story-card {
+                            margin-top: 10px;
+                            padding: 12px;
+                            border: 1px solid rgb(230, 225, 225);
+                            border-radius: 8px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 16px;
+
+                            .client-card-header {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                .client-image {
+                                    width: 27px;
+                                    aspect-ratio: 1;
+
+                                    img {
+                                        width: 100%;
+                                        object-fit: cover;
+                                        border-radius: 50%;
+                                    }
+                                }
+
+                                .client-name-desig {
+                                    margin-left: 8px;
+
+                                    .name {
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                        font-weight: 500;
+                                        will-change: transform;
+                                        color: #0a0a0a;
+                                    }
+
+                                    .client-designation {
+                                        font-size: 12px;
+                                        line-height: 16px;
+                                        font-weight: 400;
+                                        color: #737373;
+                                        will-change: transform;
+                                    }
+                                }
+
+                                .profile-badge-stars {
+                                    display: flex;
+                                    gap: 2px;
+                                    align-items: center;
+                                    margin-left: auto;
+
+                                    /* gap: px; */
+                                    i {
+                                        color: black;
+                                        will-change: transform;
+                                        font-size: 8px;
+                                    }
+                                }
+                            }
+
+                            .client-comments {
+                                will-change: transform;
+
+                                i {
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    line-height: 20px;
+                                    color: #0a0a0a;
+                                }
+                            }
+                        }
+                    }
+
+                    .client-card-btns {
+                        margin-top: 63px;
+                        width: 100%;
+                        display: flex;
+                        gap: 10px;
+                        flex-direction: column;
+
+                        .started-btn {
+                            width: 100%;
+                            padding: 9px 12px;
+                            background: black;
+                            border-radius: 10px;
+                            align-items: center;
+                            color: white;
+                            border: 1px solid black;
+                            display: flex;
+                            will-change: transform;
+                            transition: all .3s ease;
+
+                            svg {
+                                width: 12px;
+                                aspect-ratio: 1;
+                            }
+
+                            p {
+                                will-change: transform;
+                                margin-left: 4px;
+                                font-size: 14px;
+                                line-height: 20px;
+                                font-weight: 500;
+                                cursor: pointer;
+                            }
+
+                            i {
+                                margin-left: auto;
+                                transition: all .3s ease;
+                            }
+
+                            &:hover {
+                                background: #242323;
+
+                                i {
+                                    transform: translatex(5px);
+                                }
+                            }
+                        }
+
+                        .card-cta-btn {
+                            cursor: pointer;
+                            padding: 9px;
+                            border-radius: 8px;
+                            border: 1px solid #afa8a846;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            transition: all .3s ease;
+
+                            p {
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 20px;
+                                color: #171717;
+                                cursor: pointer;
+                                will-change: transform;
+                            }
+
+                            svg {
+                                width: 16px;
+                                aspect-ratio: 1;
+                            }
+
+                            &:hover {
+                                background: rgb(211, 209, 209);
+                            }
+                        }
+                    }
+                }
+
+                /* Card Features Container  */
+                .card-features-container {
+                    padding: 32px;
+
+                    h5 {
+                        color: #0a0a0a;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 600;
+                        will-change: transform;
+                    }
+
+                    .card-features-list {
+                        margin-top: 16px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6px;
+
+                        .card-features-item {
+                            list-style: none;
+                            display: flex;
+                            gap: 14px;
+
+                            svg {
+                                width: 12px;
+                                aspect-ratio: 1;
+                            }
+
+                            p {
+                                font-size: 14px;
+                                line-height: 20px;
+                                font-weight: 400;
+                                color: #0a0a0a;
+                                will-change: transform;
+                            }
+                        }
+                    }
+
+                    .price-wrapper {
+                        margin-top: 30px;
+                        display: flex;
+                        gap: 10px;
+                        flex-direction: column;
+                        will-change: transform;
+
+                        .lancer-rate {
+                            font-size: 36px;
+                            line-height: 40px;
+                            font-weight: 700;
+                            will-change: transform;
+                        }
+
+                        .dicount-info {
+                            display: flex;
+                            align-items: center;
+                            gap: 6px;
+                            will-change: transform;
+
+                            .off-rate {
+                                font-size: 12px;
+                                line-height: 20px;
+                                font-weight: 500;
+                                color: #00c950;
+                                padding: 0px 6px;
+                                border: 1px solid #00c950;
+                                border-radius: 6px;
+                            }
+
+                            will-change: transform;
+
+                            span {
+                                font-size: 16px;
+                                line-height: 24px;
+                                font-weight: 400;
+                                color: #737373;
+                                text-decoration: line-through;
+                                will-change: transform;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    transform: scale(1.02);
+                    box-shadow: 1px 0px 12px 3px #6464644d;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: Promo Section ---
+----------------------------------- */
+/* #######################  */
+/* #######################  */
+/* #######################  */
+/* #######################  */
+/* #######################  */
+/* ---------------------------------
+------ START :: FAQ Section ---
+----------------------------------- */
+.lancer-faq-section {
+    padding-top: 50px;
+    border-bottom: 1px solid rgba(190, 188, 188, 0.514);
+
+    .container {
+        .lancer-faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+
+            .faq-section-heading {
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 36px;
+                color: #000;
+                text-align: center;
+            }
+
+            .faq-desc {
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 400;
+                color: #737373;
+                text-align: center;
+            }
+
+            .faq-main-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .faq-container-list {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 670px;
+                    margin: 50px auto;
+                    font-family: Arial, sans-serif;
+                    border-radius: 8px;
+                    gap: 10px;
+
+                    .faq-question {
+                        width: 100%;
+                        text-align: left;
+                        padding: 15px 20px;
+                        background-color: #f4f4f4;
+                        font-size: 16px;
+                        font-weight: 500;
+                        cursor: pointer;
+                        border: 1px solid #ddd;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-radius: 12px;
+                        color: #706c6c;
+                        transition: all .3s ease;
+                        line-height: 22px;
+
+                        &:hover {
+                            p {
+                                color: black;
+                            }
+
+                            i {
+                                color: black;
+                            }
+                        }
+
+                        &.active {
+                            p {
+                                color: black;
+                            }
+
+                            i {
+                                color: black;
+                            }
+                        }
+                    }
+
+                    .faq-question:hover {
+                        background-color: #eee;
+                    }
+
+                    .faq-answer-wrapper {
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.4s ease-in-out;
+                    }
+
+                    .faq-answer-content {
+                        padding: 20px;
+                        background-color: #fff;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #706c6c;
+                        line-height: 21px;
+                        border-bottom: 1px solid #ddd;
+                    }
+
+                    .faq-question .icon {
+                        transition: transform 0.4s;
+                        font-size: 14px;
+                        color: #706c6c;
+                    }
+
+                    .faq-question.active .icon {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: FAQ Section ---
+----------------------------------- */
+/* ############################## */
+/* ############################## */
+/* ############################## */
+/* ############################## */
+/* ---------------------------------
+------ START :: FAQ Section --------
+----------------------------------- */
+.lancer-footer-section {
+    padding-block: 64px;
+
+    .container {
+        .lancer-footer-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+
+            .footer-content {
+                display: flex;
+                gap: 30px;
+
+                .copyright {
+                    color: #706c6c;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    cursor: auto;
+                }
+
+                .footer-links-list {
+                    display: flex;
+                    gap: 20px;
+
+                    .footer-link-item {
+                        a {
+                            color: #706c6c;
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-weight: 400;
+                            text-decoration: underline;
+                            text-underline-offset: 5px;
+                            transition: all .3s ease;
+
+                            &:hover {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------
+------ END :: FAQ Section ---
 ----------------------------------- */

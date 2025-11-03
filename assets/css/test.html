@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lancer App Header</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+      /* Base Styles (Simplified for this example) */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      body {
+        /* Add some padding to see the fixed header clearly over content */
+        padding-top: 100px;
+        font-family: Arial, sans-serif;
+        min-height: 200vh; /* For testing the fixed header scroll effect */
+      }
+
+      .container {
+        width: 95%;
+        margin: 0 auto;
+      }
+
+      /* --- Header Section Styles --- */
+      .lancer-app-header-section {
+        position: fixed;
+        top: 10px;
+        left: 0;
+        right: 0;
+        z-index: 2;
+      }
+
+      .lancer-app-header-container {
+        border: 1px solid white;
+        transition: all 0.3s ease;
+        border-radius: 16px;
+        width: 95%;
+        padding-inline: 20px;
+        margin: 0 auto;
+        height: 82px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.747);
+      }
+
+      /* Desktop Floating State */
+      .lancer-app-header-container.header-floating {
+        backdrop-filter: blur(10px);
+        width: 85%;
+        border: 1px solid rgb(207, 201, 201);
+      }
+
+      /* Desktop Navigation Styles */
+      .lancer-header-navbar {
+        display: flex;
+        position: relative;
+        width: 75%;
+        align-items: center;
+        margin-left: 10%;
+      }
+
+      .header-navbar-list {
+        display: flex;
+        position: absolute;
+        gap: 30px;
+      }
+
+      .header-navbar-link {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        cursor: pointer;
+        color: #747474;
+        min-width: max-content;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .header-navbar-link:hover {
+        color: black;
+      }
+
+      /* Login/Demo Buttons */
+      .nav-login-btn {
+        margin-left: auto;
+        display: flex;
+        gap: 6px;
+      }
+
+      .nav-btn {
+        padding: 4px 12px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        min-width: max-content;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .login-btn {
+        border: 1px solid rgb(224, 223, 223);
+        background-color: white;
+      }
+
+      .login-btn:hover {
+        background-color: black;
+        color: white;
+      }
+
+      .demo-btn {
+        color: white;
+        background-color: black;
+        display: flex;
+        gap: 2px;
+        border: 1px solid black;
+      }
+
+      .demo-btn:hover {
+        background: white;
+        color: black;
+      }
+
+      /* Mobile Toggle Buttons - Initially Hidden on Desktop */
+      .toggle-btn {
+        display: none;
+      }
+
+      .toggle-btn i {
+        color: gray;
+      }
+
+      .toggle-btn input {
+        display: none;
+      }
+
+      /* --- RESPONSIVE STYLES (MAX-WIDTH: 1070px) --- */
+      @media (max-width: 1070px) {
+        .lancer-app-header-section {
+          top: 0; /* Align to the top edge on mobile */
+        }
+
+        .lancer-app-header-container {
+          height: 62px;
+          padding-inline: 5%;
+          border: none;
+          border-radius: 0;
+          width: 100%;
+          /* Added background blur for the main header */
+          backdrop-filter: blur(10px);
+          background-color: rgba(255, 255, 255, 0.747);
+        }
+
+        .lancer-app-header-container.header-floating {
+          width: 100%;
+          border: none;
+        }
+
+        .lancer-header-logo-image svg {
+          width: 34px;
+          height: 34px;
+        }
+
+        /* Mobile Menu Container (Closed State) */
+        .lancer-header-navbar {
+          position: fixed;
+          align-items: center;
+          top: 62px; /* Starts below the main header height (62px) */
+          max-width: 300px;
+          width: 100%;
+          height: 600px;
+          left: 0;
+          /* Use margin: 0 auto; to center the fixed element horizontally */
+          margin: 0 auto;
+          right: 0;
+          flex-direction: column;
+          gap: 30px;
+
+          /* **CRITICAL**: Use semi-transparent background for blur */
+          background-color: #ffffffbe;
+          backdrop-filter: blur(10px);
+
+          /* **CRITICAL FIX**: Hides menu vertically for slide-down effect */
+          transform: translateY(-900px);
+          transition: transform 0.3s ease, background-color 0.3s ease; /* Transition only transform */
+        }
+
+        .header-navbar-list {
+          padding-top: 40px;
+          position: static;
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+
+        .nav-login-btn {
+          margin-left: 0;
+          flex-direction: column;
+        }
+
+        /* Toggle Buttons (Burger/Cross) */
+        .toggle-btn {
+          display: block;
+          color: black;
+          position: absolute;
+          top: 50%; /* Center vertically */
+          transform: translateY(-50%);
+          right: 5%;
+          cursor: pointer;
+          font-size: 20px;
+        }
+
+        .toggle-btn.nav-close-icon {
+          display: none; /* Hidden by default, shown by JS/Checkbox */
+        }
+
+        /* --- OPEN STATE (SLIDE DOWN EFFECT) --- */
+        .lancer-app-header-container:has(input:checked) .lancer-header-navbar {
+          /* **CRITICAL FIX**: Bring menu down into view */
+          transform: translateY(0);
+        }
+
+        .lancer-app-header-container:has(input:checked) .burger-icon {
+          display: none;
+        }
+
+        .lancer-app-header-container:has(input:checked) .nav-close-icon {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="lancer-app-header-section">
+      <div class="container">
+        <div class="lancer-app-header-container">
+          <div class="lancer-header-logo-image">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              viewBox="0 0 92 70"
+              fill="none"
+              class="hero__logo">
+              <path
+                d="M74.0978 32.2248H68.7272L63.3565 26.8542V29.5395C63.3565 32.5056 65.761 34.9102 68.7272 34.9102H74.0978V45.6514C74.0978 48.3028 73.1338 50.7352 71.5410 52.6079C70.5091 53.7916 69.2644 54.7604 67.8336 55.4172L65.5928 50.5363C66.3496 50.1889 66.9901 49.6687 67.5261 49.0369C68.2786 48.1120 68.7272 46.9369 68.7272 45.6514V40.2808H65.3705V42.9661C65.3705 44.1644 65.1068 45.3007 64.6376 46.3227L58.0416 59.0413L58.0606 59.0780L63.6870 69.8193H57.6240L51.9977 59.0780H52.0167L51.9977 59.0413L56.2079 50.9453C54.0226 50.6451 52.1166 49.4698 50.8563 47.7828C51.7179 44.2263 51.2691 40.3451 49.2940 36.9241L46.9680 38.2668C48.0251 40.0978 48.5873 42.1954 48.5873 44.3088C48.5873 46.2811 48.0949 48.2492 47.1693 49.9908C47.1693 49.9908 43.9853 56.0476 42.3978 59.0780L48.0248 69.8193H41.9619L36.3356 59.0780L37.7765 56.3258C36.2749 56.4831 34.7458 56.3607 33.2897 55.9600L31.6566 59.0780L37.2835 69.8193H31.2206L25.5943 59.0780L28.5602 53.4143C26.0230 51.1992 24.4195 47.9415 24.4195 44.3088V38.6864C22.9364 38.6864 21.7342 39.8886 21.7342 41.3717V53.7074C21.7342 56.6735 19.3296 59.0780 16.3635 59.0780V43.2546C16.3635 38.7273 20.1817 34.9102 24.4195 34.9102H28.4474C29.9305 34.9102 31.1328 33.7079 31.1328 32.2248V26.8542H51.2726V24.1689L57.2949 18.1466C60.3165 15.1251 63.0721 12.0850 67.3452 12.0850H74.0978V32.2248Z"
+                fill="#111A26"></path>
+              <path
+                d="M41.874 0.00106812C45.5817 0.00106812 48.5873 3.00671 48.5873 6.71436V12.085L41.874 9.39967V14.7703H35.1607V6.71436C35.1607 3.00671 38.1664 0.00106812 41.874 0.00106812Z"
+                fill="#111A26"></path>
+              <path
+                d="M48.5871 29.2239C48.5871 31.0889 47.6193 32.8205 46.031 33.7979L39.8599 37.5958L33.6888 33.7979C32.1004 32.8205 31.1326 31.0889 31.1326 29.2239V26.8545H4.3634V24.1692H31.1326V16.1133H48.5871V29.2239Z"
+                fill="#D94C58"></path>
+              <path
+                d="M91.6361 25.5119V26.8545H51.2725V24.1692L91.6361 25.5119Z"
+                fill="#D94C58"></path>
+            </svg>
+          </div>
+
+          <nav class="lancer-header-navbar">
+            <ul class="header-navbar-list">
+              <li class="header-navbar-item">
+                <a href="#" class="header-navbar-link">Calculate Wins</a>
+              </li>
+              <li class="header-navbar-item">
+                <a href="#" class="header-navbar-link">Testimonials</a>
+              </li>
+              <li class="header-navbar-item">
+                <a href="#" class="header-navbar-link">Features</a>
+              </li>
+              <li class="header-navbar-item">
+                <a href="#" class="header-navbar-link">Contact</a>
+              </li>
+              <li class="header-navbar-item">
+                <a href="#" class="header-navbar-link">Pircing</a>
+              </li>
+            </ul>
+
+            <div class="nav-login-btn">
+              <button class="login-btn nav-btn"> Login</button>
+              <button class="demo-btn nav-btn">
+                Demo <span>With Founder</span></button
+              >
+            </div>
+          </nav>
+
+          <label class="toggle-btn nav-close-icon" for="nav-toggle">
+            <i class="fa-solid fa-xmark nav-close-icon"></i>
+          </label>
+
+          <label class="toggle-btn burger-icon" for="nav-toggle">
+            <i class="fa-solid fa-bars burger-icon"></i>
+            <input type="checkbox" id="nav-toggle" />
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main style="padding: 20px">
+      <h1>Main Content Area</h1>
+      <p>Scroll down to see the fixed header in action.</p>
+      <div style="height: 1000px; background-color: #f0f0f0; margin-top: 20px">
+        Extra tall content...
+      </div>
+    </main>
+
+    <script>
+      // --- JavaScript Logic for Smooth Slide Down/Up ---
+      document.addEventListener("DOMContentLoaded", () => {
+        const navToggleInput = document.getElementById("nav-toggle");
+        const headerContainer = document.querySelector(
+          ".lancer-app-header-container"
+        );
+        const navCloseIcon = document.querySelector(".nav-close-icon");
+        const burgerIcon = document.querySelector(".burger-icon");
+
+        // Attach listeners to the icon labels which control the checkbox
+        if (navToggleInput && headerContainer) {
+          // Watch for checkbox state change (this is triggered by clicking the labels)
+          navToggleInput.addEventListener("change", () => {
+            if (navToggleInput.checked) {
+              // Menu is open
+              burgerIcon.style.display = "none";
+              navCloseIcon.style.display = "block";
+            } else {
+              // Menu is closed
+              burgerIcon.style.display = "block";
+              navCloseIcon.style.display = "none";
+            }
+          });
+
+          // --- Optional: Logic for 'header-floating' class (if needed for scroll) ---
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+              headerContainer.classList.add("header-floating");
+            } else {
+              headerContainer.classList.remove("header-floating");
+            }
+          });
+
+          // Initial state check for mobile icons
+          if (window.innerWidth <= 1070) {
+            navCloseIcon.style.display = "none";
+            burgerIcon.style.display = "block";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
