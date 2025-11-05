@@ -6,7 +6,7 @@
     font-family: system-ui;
     list-style: none;
     text-decoration: none;
-    cursor: default;
+    scroll-behavior: smooth;
 }
 
 /* Center container with max width and side spacing */

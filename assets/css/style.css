@@ -312,6 +312,7 @@
 ------ START :: Testimonial Section ---
 ----------------------------------- */
 .lancer-testimonial-section {
+    scroll-margin-top: 70px;
     margin-top: 80px;
     background-color: black;
     color: white;
@@ -506,12 +507,13 @@
                     }
 
                     .stat-card-detail {
-                        font-size: 16px;
+                        font-size: 14px;
                         line-height: 20px;
                         font-weight: 400;
                         font-family: ui-sans-serif;
                         color: #737373;
                         will-change: transform;
+                        font-family: system-ui, sans-serif;
                     }
 
                     &:hover {
@@ -539,6 +541,7 @@
 ------ START :: Conversion Section ---
 ----------------------------------- */
 .lancer-conversion-section {
+    scroll-margin-top: 100px;
     margin: 120px 0;
 
     .container {
@@ -713,6 +716,7 @@
 ----- START :: Features Section ---
 ----------------------------------- */
 .lancer-features-section {
+    scroll-margin-top: 90px;
     padding: 64px 0;
 
     .container {
