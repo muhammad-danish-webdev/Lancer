@@ -1132,6 +1132,7 @@
                             i {
                                 margin-left: auto;
                                 transition: all .3s ease;
+                                will-change: transform;
                             }
 
                             &:hover {
